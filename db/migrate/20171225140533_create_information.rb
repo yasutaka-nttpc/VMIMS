@@ -1,5 +1,7 @@
 class CreateInformation < ActiveRecord::Migration[5.1]
   UPDATE_TIMESTAMP = 'TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'
+  #GROUP = "INT(11) COMMENT 'グループID' FOREIGN KEY(group) REFERENCES groups(id)"
+  #SERVICE = "INT(11) COMMENT 'サービスID' FOREIGN KEY(service) REFERENCES services(id)"
 
   def change
     create_table :information do |t|
@@ -7,10 +9,12 @@ class CreateInformation < ActiveRecord::Migration[5.1]
       # t.integer :id, :limit => 11, :null => false, comment: 'ID'
       t.datetime :created_at, comment: '登録日時'
       t.column :updated_at, UPDATE_TIMESTAMP, null: true, comment: '更新日時'
-      t.integer :group, :limit => 4, comment: 'グループID'
-      t.integer :service, :limit => 4, comment: 'サービスID'
-      t.integer :category, :limit => 4, comment: '機器種別ID'
-      t.integer :environment, :limit => 4, comment: '環境ID'
+      t.references :group, :limit => 4, comment: 'グループID'
+      #t.column :group, GROUP
+      t.references :service, :limit => 4, comment: 'サービスID'
+      #t.column :service, SERVICE
+      t.references :category, :limit => 4, comment: '機器種別ID'
+      t.references :environment, :limit => 4, comment: '環境ID'
       t.string :name, :limit => 255, :null => false, comment: '機器名'
       t.string :serial, :limit => 255, comment: 'シリアルナンバー'
       t.string :server_name, :limit => 255, :null => false, comment: 'サーバー名'
@@ -36,5 +40,9 @@ class CreateInformation < ActiveRecord::Migration[5.1]
       t.string :remarks_3, :limit => 1024, comment: '備考3'
       t.integer :non_alert_flag, :limit => 3, comment: '保守期限アラート無効'
     end
+    #add_foreign_key :information, :groups, column: :group_id
+    #add_foreign_key :information, :services, column: :id
+    #add_foreign_key :information, :categories, column: :id
+    #add_foreign_key :information, :environments, column: :id
   end
 end

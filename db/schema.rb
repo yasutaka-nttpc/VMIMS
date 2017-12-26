@@ -10,15 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171225140533) do
+ActiveRecord::Schema.define(version: 20171226140040) do
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+  end
+
+  create_table "environments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+  end
+
+  create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "group_id"
+    t.string "name"
+    t.string "alert_mailaddr", limit: 128
+  end
 
   create_table "information", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", comment: "登録日時"
     t.timestamp "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false, comment: "更新日時"
-    t.integer "group", comment: "グループID"
-    t.integer "service", comment: "サービスID"
-    t.integer "category", comment: "機器種別ID"
-    t.integer "environment", comment: "環境ID"
+    t.bigint "group_id", comment: "グループID"
+    t.bigint "service_id", comment: "サービスID"
+    t.bigint "category_id", comment: "機器種別ID"
+    t.bigint "environment_id", comment: "環境ID"
     t.string "name", null: false, comment: "機器名"
     t.string "serial", comment: "シリアルナンバー"
     t.string "server_name", null: false, comment: "サーバー名"
@@ -43,6 +57,18 @@ ActiveRecord::Schema.define(version: 20171225140533) do
     t.string "remarks_2", limit: 1024, comment: "備考2"
     t.string "remarks_3", limit: 1024, comment: "備考3"
     t.integer "non_alert_flag", limit: 3, comment: "保守期限アラート無効"
+    t.index ["category_id"], name: "index_information_on_category_id"
+    t.index ["environment_id"], name: "index_information_on_environment_id"
+    t.index ["group_id"], name: "index_information_on_group_id"
+    t.index ["service_id"], name: "index_information_on_service_id"
   end
 
+  create_table "services", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "service_id"
+    t.string "name"
+    t.string "alert_mailaddr", limit: 128
+  end
+
+  add_foreign_key "information", "groups"
+  add_foreign_key "information", "services"
 end
