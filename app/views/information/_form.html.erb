@@ -1,0 +1,90 @@
+<%= form_for(@information) do |f| %>
+
+  ここにエラー表示処理作る
+
+  <%= f.label :name, "グループID" %>
+  <%= f.text_field :group, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "サービスID" %>
+  <%= f.text_field :service, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "機種別ID" %>
+  <%= f.text_field :category, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "環境ID" %>
+  <%= f.text_field :environment, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "機器名" %>
+  <%= f.text_field :name, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "シリアルナンバー" %>
+  <%= f.text_field :serial, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "サーバー名" %>
+  <%= f.text_field :server_name, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "保守ベンダー" %>
+  <%= f.text_field :support_contact, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "保守契約期間" %>
+  <%= f.text_field :support_contact_period, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "保守番号" %>
+  <%= f.text_field :support_id, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "ハード保守条件" %>
+  <%= f.text_field :hard_support_conditions, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "ハード保守電話番号" %>
+  <%= f.text_field :hard_contact_tel, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "ハード保守メールアドレス" %>
+  <%= f.text_field :hard_contact_mail, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "ハード保守その他" %>
+  <%= f.text_field :hard_contact_other, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "ソフト保守条件" %>
+  <%= f.text_field :soft_support_conditions, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "ソフト保守電話番号" %>
+  <%= f.text_field :soft_contact_tel, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "ソフト保守メールアドレス" %>
+  <%= f.text_field :soft_contact_mail, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "ソフト保守その他" %>
+  <%= f.text_field :soft_contact_other, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "OSバージョン" %>
+  <%= f.text_field :os_version, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "ハード保守期限" %>
+  <%= f.text_field :eos_hard, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "ソフト保守期限" %>
+  <%= f.text_field :eos_soft, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "営業担当者" %>
+  <%= f.text_field :sales_contact, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "営業電話番号" %>
+  <%= f.text_field :sales_contact_tel, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "営業メールアドレス" %>
+  <%= f.text_field :sales_contact_mail, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "備考1" %>
+  <%= f.text_field :remarks_1, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "備考2" %>
+  <%= f.text_field :remarks_2, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "備考3" %>
+  <%= f.text_field :remarks_3, class: 'form-control' %>
+  <br>
+  <%= f.label :name, "保守期限アラート無効" %>
+  <%= f.text_field :non_alert_flag, class: 'form-control' %>
+  <br>
+  <%= f.submit '追加', class: 'btn btn-primary btn-block' %>
+  <% end %>
