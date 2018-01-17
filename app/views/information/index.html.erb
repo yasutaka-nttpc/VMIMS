@@ -1,2 +1,33 @@
-<h1>Information#index</h1>
-<p>Find me in app/views/information/index.html.erb</p>
+<h1>一覧</h1>
+
+<% @information.each do |info| %>
+  <p>グループID:<%= info.group %></p>
+  <p>サービスID:<%= info.service %></p>
+  <p>機種別ID:<%= info.category %></p>
+  <p>環境ID:<%= info.environment %></p>
+  <p>機器名:<%= info.name %></p>
+  <p>シリアルナンバー:<%= info.serial %></p>
+  <p>サーバー名:<%= info.server_name %></p>
+  <p>保守ベンダー:<%= info.support_contact %></p>
+  <p>保守契約期間:<%= info.support_contact_period %></p>
+  <p>保守番号:<%= info.support_id %></p>
+  <p>ハード保守条件:<%= info.hard_support_conditions %></p>
+  <p>ハード保守電話番号:<%= info.hard_contact_tel %></p>
+  <p>ハード保守メールアドレス:<%= info.hard_contact_mail %></p>
+  <p>ハード保守その他:<%= info.hard_contact_other %></p>
+  <p>ソフト保守条件:<%= info.soft_support_conditions %></p>
+  <p>ソフト保守電話番号:<%= info.soft_contact_tel %></p>
+  <p>ソフト保守メールアドレス:<%= info.soft_contact_mail %></p>
+  <p>ソフト保守その他:<%= info.soft_contact_other %></p>
+  <p>OSバージョン:<%= info.os_version %></p>
+  <p>ハード保守期限:<%= info.eos_hard %></p>
+  <p>ソフト保守期限:<%= info.eos_soft %></p>
+  <p>営業担当者:<%= info.sales_contact %></p>
+  <p>営業電話番号:<%= info.sales_contact_tel %></p>
+  <p>営業メールアドレス:<%= info.sales_contact_mail %></p>
+  <p>備考1:<%= info.remarks_1 %></p>
+  <p>備考2:<%= info.remarks_2 %></p>
+  <p>備考3:<%= info.remarks_3 %></p>
+  <p>保守期限アラート無効:<%= info.non_alert_flag %></p>
+  
+<% end %>

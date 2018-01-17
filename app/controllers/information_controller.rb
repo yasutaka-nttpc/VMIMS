@@ -22,7 +22,7 @@ class InformationController < ApplicationController
   def create
     @information = Information.new(information_params)
     if @information.save
-      redirect_to information_path, notice: "追加完了"
+      redirect_to information_index, notice: "追加完了"
     else
       render 'new'
     end
@@ -32,8 +32,8 @@ class InformationController < ApplicationController
   end
 
   def update
-    if @blog.update(blogs_params)
-      redirect_to blogs_path, notice: "更新完了"
+    if @information.update(information_params)
+      redirect_to information_index, notice: "更新完了"
     else
       render 'edit'
     end
@@ -41,12 +41,12 @@ class InformationController < ApplicationController
 
   def destroy
     @information.destroy
-    redirect_to information_path, notice: "削除完了"
+    redirect_to information_index, notice: "削除完了"
   end
 
   private
     def information_params
-      params.require(:information).permit(:title, :content)
+      params.require(:information).permit(:group, :service, :category, :environment, :name, :serial, :server_name, :support_contact, :support_contact_period, :support_id, :hard_support_conditions, :hard_contact_tel, :hard_contact_mail, :hard_contact_other, :soft_support_conditions, :soft_contact_tel, :soft_contact_mail, :soft_contact_other, :os_version, :eos_hard, :eos_soft, :sales_contact, :sales_contact_tel, :sales_contact_mail, :remarks_1, :remarks_2, :remarks_3, :non_alert_flag)
     end
 
     def set_information
