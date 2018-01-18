@@ -1,3 +1,5 @@
+<p><%= notice %></p>
+
 <h1>一覧</h1>
 
 <% @information.each do |info| %>
@@ -29,5 +31,8 @@
   <p>備考2:<%= info.remarks_2 %></p>
   <p>備考3:<%= info.remarks_3 %></p>
   <p>保守期限アラート無効:<%= info.non_alert_flag %></p>
-  
+  <%= link_to "削除", information_path(info.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+  <hr>
 <% end %>
+
+<%= link_to "追加", new_information_path %>

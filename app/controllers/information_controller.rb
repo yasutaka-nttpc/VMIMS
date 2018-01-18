@@ -22,7 +22,7 @@ class InformationController < ApplicationController
   def create
     @information = Information.new(information_params)
     if @information.save
-      redirect_to information_index, notice: "追加完了"
+      redirect_to information_index_path, notice: "追加完了"
     else
       render 'new'
     end
@@ -33,7 +33,7 @@ class InformationController < ApplicationController
 
   def update
     if @information.update(information_params)
-      redirect_to information_index, notice: "更新完了"
+      redirect_to information_index_path, notice: "更新完了"
     else
       render 'edit'
     end
@@ -41,7 +41,7 @@ class InformationController < ApplicationController
 
   def destroy
     @information.destroy
-    redirect_to information_index, notice: "削除完了"
+    redirect_to information_index_path, notice: "削除完了"
   end
 
   private
