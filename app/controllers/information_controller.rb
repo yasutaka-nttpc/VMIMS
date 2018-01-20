@@ -22,7 +22,7 @@ class InformationController < ApplicationController
   def create
     @information = Information.new(information_params)
     if @information.save
-      redirect_to information_index_path, notice: "追加完了"
+      redirect_to information_index_path, notice: "登録完了"
     else
       render 'new'
     end
