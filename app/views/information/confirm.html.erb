@@ -61,3 +61,35 @@
 
   <%= f.submit "登録する" %>
 <% end %>
+
+<%= form_for(@information, url: new_information_path, method: 'get') do |f| %>
+  <%= f.hidden_field :group %>
+  <%= f.hidden_field :service %>
+  <%= f.hidden_field :category %>
+  <%= f.hidden_field :environment %>
+  <%= f.hidden_field :name %>
+  <%= f.hidden_field :serial %>
+  <%= f.hidden_field :server_name %>
+  <%= f.hidden_field :support_contact %>
+  <%= f.hidden_field :support_contact_period %>
+  <%= f.hidden_field :support_id %>
+  <%= f.hidden_field :hard_support_conditions %>
+  <%= f.hidden_field :hard_contact_tel %>
+  <%= f.hidden_field :hard_contact_mail %>
+  <%= f.hidden_field :hard_contact_other %>
+  <%= f.hidden_field :soft_support_conditions %>
+  <%= f.hidden_field :soft_contact_tel %>
+  <%= f.hidden_field :soft_contact_mail %>
+  <%= f.hidden_field :soft_contact_other %>
+  <%= f.hidden_field :os_version %>
+  <%= f.hidden_field :eos_hard %>
+  <%= f.hidden_field :eos_soft %>
+  <%= f.hidden_field :sales_contact %>
+  <%= f.hidden_field :sales_contact_tel %>
+  <%= f.hidden_field :sales_contact_mail %>
+  <%= f.hidden_field :remarks_1 %>
+  <%= f.hidden_field :remarks_2 %>
+  <%= f.hidden_field :remarks_3 %>
+  <%= f.hidden_field :non_alert_flag %>
+  <%= f.submit "もどる", name: 'back', class: 'btn btn-default btn-block' %>
+<% end %>
