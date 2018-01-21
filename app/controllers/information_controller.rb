@@ -39,6 +39,11 @@ class InformationController < ApplicationController
     end
   end
 
+  def confirm
+    @information = Information.new(information_params)
+    render :new if @information.invalid?
+  end
+
   def destroy
     @information.destroy
     redirect_to information_index_path, notice: "削除完了"
