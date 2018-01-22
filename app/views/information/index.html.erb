@@ -1,39 +1,88 @@
-<p><%= notice %></p>
+<div class="container">
+  <div class="wrapper col-md-12 col-sm-10">
 
-<h1>一覧</h1>
+    <p><%= notice %></p>
+    <h1>一覧</h1>
 
-<% @information.each do |info| %>
-  <p>グループID:<%= info.group %></p>
-  <p>サービスID:<%= info.service %></p>
-  <p>機種別ID:<%= info.category %></p>
-  <p>環境ID:<%= info.environment %></p>
-  <p>機器名:<%= info.name %></p>
-  <p>シリアルナンバー:<%= info.serial %></p>
-  <p>サーバー名:<%= info.server_name %></p>
-  <p>保守ベンダー:<%= info.support_contact %></p>
-  <p>保守契約期間:<%= info.support_contact_period %></p>
-  <p>保守番号:<%= info.support_id %></p>
-  <p>ハード保守条件:<%= info.hard_support_conditions %></p>
-  <p>ハード保守電話番号:<%= info.hard_contact_tel %></p>
-  <p>ハード保守メールアドレス:<%= info.hard_contact_mail %></p>
-  <p>ハード保守その他:<%= info.hard_contact_other %></p>
-  <p>ソフト保守条件:<%= info.soft_support_conditions %></p>
-  <p>ソフト保守電話番号:<%= info.soft_contact_tel %></p>
-  <p>ソフト保守メールアドレス:<%= info.soft_contact_mail %></p>
-  <p>ソフト保守その他:<%= info.soft_contact_other %></p>
-  <p>OSバージョン:<%= info.os_version %></p>
-  <p>ハード保守期限:<%= info.eos_hard %></p>
-  <p>ソフト保守期限:<%= info.eos_soft %></p>
-  <p>営業担当者:<%= info.sales_contact %></p>
-  <p>営業電話番号:<%= info.sales_contact_tel %></p>
-  <p>営業メールアドレス:<%= info.sales_contact_mail %></p>
-  <p>備考1:<%= info.remarks_1 %></p>
-  <p>備考2:<%= info.remarks_2 %></p>
-  <p>備考3:<%= info.remarks_3 %></p>
-  <p>保守期限アラート無効:<%= info.non_alert_flag %></p>
-  <%= link_to "編集", edit_information_path(info.id), class: 'btn btn-default btn-sm btn-success' %>
-  <%= link_to "削除", information_path(info.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
-  <hr>
-<% end %>
+    <%= link_to "追加", new_information_path, class: 'btn btn-default' %>
 
-<%= link_to "追加", new_information_path %>
+    <div class="table-responsive">
+      <table class="table table-striped 
+      table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>グループID</th>
+            <th>サービスID</th>
+            <th>機種別ID</th>
+            <th>環境ID</th>
+            <th>機器名</th>
+            <th>シリアルナンバー</th>
+            <th>サーバー名</th>
+            <th>保守ベンダー</th>
+            <th>保守契約期間</th>
+            <th>保守番号</th>
+            <th>ハード保守条件</th>
+            <th>ハード保守電話番号</th>
+            <th>ハード保守メールアドレス</th>
+            <th>ハード保守その他</th>
+            <th>ソフト保守条件</th>
+            <th>ソフト保守電話番号</th>
+            <th>ソフト保守メールアドレス</th>
+            <th>ソフト保守その他</th>
+            <th>OSバージョン</th>
+            <th>ハード保守期限</th>
+            <th>ソフト保守期限</th>
+            <th>営業担当者</th>
+            <th>営業電話番号</th>
+            <th>営業メールアドレス</th>
+            <th>備考1</th>
+            <th>備考2</th>
+            <th>備考3</th>
+            <th>保守期限アラート無効</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @information.each do |info| %>
+            <tr>
+              <th><%= info.id %></th>
+              <td><%= info.group %></td>
+              <td><%= info.service %></td>
+              <td><%= info.category %></td>
+              <td><%= info.environment %></td>
+              <td><%= info.name %></td>
+              <td><%= info.serial %></td>
+              <td><%= info.server_name %></td>
+              <td><%= info.support_contact %></td>
+              <td><%= info.support_contact_period %></td>
+              <td><%= info.support_id %></td>
+              <td><%= info.hard_support_conditions %></td>
+              <td><%= info.hard_contact_tel %></td>
+              <td><%= info.hard_contact_mail %></td>
+              <td><%= info.hard_contact_other %></td>
+              <td><%= info.soft_support_conditions %></td>
+              <td><%= info.soft_contact_tel %></td>
+              <td><%= info.soft_contact_mail %></td>
+              <td><%= info.soft_contact_other %></td>
+              <td><%= info.os_version %></td>
+              <td><%= info.eos_hard %></td>
+              <td><%= info.eos_soft %></td>
+              <td><%= info.sales_contact %></td>
+              <td><%= info.sales_contact_tel %></td>
+              <td><%= info.sales_contact_mail %></td>
+              <td><%= info.remarks_1 %></td>
+              <td><%= info.remarks_2 %></td>
+              <td><%= info.remarks_3 %></td>
+              <td><%= info.non_alert_flag %></td>
+              <td>
+                <%= link_to "編集", edit_information_path(info.id), class: 'btn btn-default btn-sm btn-success' %>
+                <%= link_to "削除", information_path(info.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
