@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <header>
+      <ul>
+      <li><%= link_to "VMIMS", root_path %></li>
+      <li><%= link_to "登録情報一覧", information_index_path %></li>
+        <li><%= link_to "新規登録", new_information_path %></li>
+      </ul>
+    </header>
+
     <%= yield %>
   </body>
 </html>
