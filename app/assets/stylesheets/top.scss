@@ -27,11 +27,9 @@ header ul:after {
   clear: both;
 }
 
-
 .main {
   color: #000000;
 }
-
 
 html {
   position: relative;
@@ -44,4 +42,9 @@ body {
 
 .content {
   color: #000000;
+}
+
+.flash {
+  color: black;
+  padding-top: 10px;
 }
