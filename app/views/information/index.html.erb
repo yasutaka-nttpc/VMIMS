@@ -3,7 +3,7 @@
   <div class="wrapper col-md-12 col-sm-10">
 
     <p><%= notice %></p>
-    <h1>一覧</h1>
+    <h1>登録情報一覧</h1>
 
     <p>
       <%= link_to "追加", new_information_path, class: 'btn btn-default' %>
@@ -15,10 +15,10 @@
         <thead>
           <tr>
             <th>No.</th>
-            <th>サービス</th>
-            <th>グループ</th>
-            <th>機種別</th>
-            <th>環境</th>
+            <th>サービスID</th>
+            <th>グループID</th>
+            <th>機種別ID</th>
+            <th>環境ID</th>
             <th>機器名</th>
             <th>シリアルナンバー</th>
             <th>サーバー名</th>
@@ -42,16 +42,42 @@
             <th>備考1</th>
             <th>備考2</th>
             <th>備考3</th>
+            <th>保守期限アラート無効</th>
+            <th>操作</th>
           </tr>
         </thead>
         <tbody>
           <% @information.each do |info| %>
             <tr>
               <th><%= info.id %></th>
-              <td><%= info.service %></td>
-              <td><%= info.group %></td>
-              <td><%= info.category %></td>
-              <td><%= info.environment %></td>
+              <td>
+                <% if (info.service.blank?) %>
+                  <%= info.service %>
+                <% else %>
+                  <%= Service.find(info.service).name %>
+                <% end %>
+              </td>
+              <td>
+                <% if (info.group.blank?) %>
+                  <%= info.group %>
+                <% else %>
+                  <%= Group.find(info.group).name %>
+                <% end %>
+              </td>
+              <td>
+                <% if (info.category.blank?) %>
+                  <%= info.category %>
+                <% else %>
+                  <%= Category.find(info.category).name %>
+                <% end %>
+              </td>
+              <td>
+                <% if (info.environment.blank?) %>
+                  <%= info.environment %>
+                <% else %>
+                  <%= Environment.find(info.environment).name %>
+                <% end %>
+              </td>
               <td><%= info.name %></td>
               <td><%= info.serial %></td>
               <td><%= info.server_name %></td>
@@ -75,6 +101,7 @@
               <td><%= info.remarks_1 %></td>
               <td><%= info.remarks_2 %></td>
               <td><%= info.remarks_3 %></td>
+              <td><%= info.non_alert_flag %></td>
               <td>
                 <%= link_to "編集", edit_information_path(info.id), class: 'btn btn-default btn-sm btn-success' %>
                 <%= link_to "削除", information_path(info.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
@@ -84,6 +111,13 @@
         </tbody>
       </table>
     </div>
-    </div>
-    </div>
+
+    <p>
+      <%= link_to "サービス一覧", services_path, class: 'btn btn-default' %>
+      <%= link_to "グループ一覧", groups_path, class: 'btn btn-default' %>
+      <%= link_to "カテゴリ一覧", categories_path, class: 'btn btn-default' %>
+      <%= link_to "環境一覧", environments_path, class: 'btn btn-default' %>
+    </p>
+  </div>
+  </div>
 </div>

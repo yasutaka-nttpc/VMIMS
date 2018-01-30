@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+  <div class="wrapper col-md-12 col-sm-10">
+
+    <p><%= notice %></p>
+    <h1>環境一覧</h1>
+
+    <p>
+      <%= link_to "追加", new_environment_path, class: 'btn btn-default' %>
+    </p>
+
+    <div class="table-responsive">
+      <table class="table table-striped 
+      table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>環境</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @environments.each do |environment| %>
+            <tr>
+              <th><%= environment.id %></th>
+              <td><%= environment.name %></td>
+              <td>
+                <%= link_to "編集", edit_environment_path(environment.id), class: 'btn btn-default btn-sm btn-success' %>
+                <%= link_to "削除", environment_path(environment.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    </div>
+</div>

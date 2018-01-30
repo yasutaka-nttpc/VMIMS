@@ -8,7 +8,12 @@
     </p>
   </div>
 
-  <%= link_to "ログイン", new_user_session_path, class: 'btn btn-default' %>
+  <% if user_signed_in? %>
+    <%= link_to "登録情報一覧", information_index_path, class: 'btn btn-default' %>
+  <% else %>
+    <%= link_to "ログイン", new_user_session_path, class: 'btn btn-default' %>
+  <% end %>
+
 
 <%
 =begin
@@ -21,3 +26,4 @@
 %>
 
 </div>
+

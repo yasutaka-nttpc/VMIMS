@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="col-md-12 col-sm-10">
+
+    <h3>内容確認</h3>
+
+    <%= form_for(@services) do |f| %>
+      <%= f.hidden_field :name %>
+
+      <p>サービス名:<%= @services.name %></p>
+
+      <%= f.submit "登録する", class: 'btn btn-primary btn-block' %>
+    <% end %>
+
+    <%= form_for(@services, url: new_service_path, method: 'get') do |f| %>
+      <%= f.hidden_field :name %>
+      <%= f.submit "戻る", name: 'back', class: 'btn btn-default btn-block' %>
+    <% end %>
+
+  </div>
+</div>

@@ -12,17 +12,17 @@
     </div>
   <% end %>
 
-  <%= f.label :name, "サービス" %>
-  <%= f.text_field :service, class: 'form-control' %>
+  <%= f.label :name, "サービスID" %>
+  <%= f.collection_select :service, Service.all, :id, :name, :include_blank => true %>
   <br>
-  <%= f.label :name, "グループ" %>
-  <%= f.text_field :group, class: 'form-control' %>
+  <%= f.label :name, "グループID" %>
+  <%= f.collection_select :group, Group.all, :id, :name, :include_blank => true %>
   <br>
-  <%= f.label :name, "機種別" %>
-  <%= f.text_field :category, class: 'form-control' %>
+  <%= f.label :name, "機種別ID" %>
+  <%= f.collection_select :category, Category.all, :id, :name, :include_blank => true %>
   <br>
-  <%= f.label :name, "環境" %>
-  <%= f.text_field :environment, class: 'form-control' %>
+  <%= f.label :name, "環境ID" %>
+  <%= f.collection_select :environment, Environment.all, :id, :name, :include_blank => true %>
   <br>
   <%= f.label :name, "機器名" %>
   <%= f.text_field :name, class: 'form-control' %>
@@ -94,4 +94,4 @@
   <%= f.text_field :remarks_3, class: 'form-control' %>
   <br>
   <%= f.submit '追加', class: 'btn btn-primary btn-block' %>
-  <% end %>
+<% end %>

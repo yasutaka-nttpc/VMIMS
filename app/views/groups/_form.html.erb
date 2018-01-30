@@ -1,0 +1,19 @@
+<%= form_for(@groups, url: group_choose_new_or_edit) do |f| %>
+
+  <% if @groups.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @groups.errors.count %>件のエラーがあります。</h2>
+
+      <ul>
+      <% @groups.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :name, "グループ名" %>
+  <%= f.text_field :name, class: 'form-control' %>
+  <br>
+  <%= f.submit '追加', class: 'btn btn-primary btn-block' %>
+<% end %>
