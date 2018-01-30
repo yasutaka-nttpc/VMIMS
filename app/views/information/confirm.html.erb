@@ -4,8 +4,8 @@
     <h3>内容確認</h3>
 
     <%= form_for(@information) do |f| %>
-      <%= f.hidden_field :group %>
       <%= f.hidden_field :service %>
+      <%= f.hidden_field :group %>
       <%= f.hidden_field :category %>
       <%= f.hidden_field :environment %>
       <%= f.hidden_field :name %>
@@ -33,8 +33,8 @@
       <%= f.hidden_field :remarks_3 %>
       <%= f.hidden_field :non_alert_flag %>
 
-      <p>グループID:<%= @information.group %></p>
       <p>サービスID:<%= @information.service %></p>
+      <p>グループID:<%= @information.group %></p>
       <p>機種別ID:<%= @information.category %></p>
       <p>環境ID:<%= @information.environment %></p>
       <p>機器名:<%= @information.name %></p>
@@ -66,8 +66,8 @@
     <% end %>
 
     <%= form_for(@information, url: new_information_path, method: 'get') do |f| %>
-      <%= f.hidden_field :group %>
       <%= f.hidden_field :service %>
+      <%= f.hidden_field :group %>
       <%= f.hidden_field :category %>
       <%= f.hidden_field :environment %>
       <%= f.hidden_field :name %>

@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20180127094857) do
   create_table "information", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", comment: "登録日時"
     t.timestamp "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false, comment: "更新日時"
-    t.integer "group", comment: "グループID"
     t.integer "service", comment: "サービスID"
+    t.integer "group", comment: "グループID"
     t.integer "category", comment: "機器種別ID"
     t.integer "environment", comment: "環境ID"
     t.string "name", null: false, comment: "機器名"

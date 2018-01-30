@@ -9,10 +9,10 @@ class CreateInformation < ActiveRecord::Migration[5.1]
       # t.integer :id, :limit => 11, :null => false, comment: 'ID'
       t.datetime :created_at, comment: '登録日時'
       t.column :updated_at, UPDATE_TIMESTAMP, null: true, comment: '更新日時'
-      #t.column :group, GROUP
-      t.integer :group, :limit => 4, comment: 'グループID'
       #t.column :service, SERVICE
       t.integer :service, :limit => 4, comment: 'サービスID'
+      #t.column :group, GROUP
+      t.integer :group, :limit => 4, comment: 'グループID'
       t.integer :category, :limit => 4, comment: '機器種別ID'
       t.integer :environment, :limit => 4, comment: '環境ID'
       t.string :name, :limit => 255, :null => false, comment: '機器名'

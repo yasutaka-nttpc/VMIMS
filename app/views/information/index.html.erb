@@ -15,8 +15,8 @@
         <thead>
           <tr>
             <th>No.</th>
-            <th>グループID</th>
             <th>サービスID</th>
+            <th>グループID</th>
             <th>機種別ID</th>
             <th>環境ID</th>
             <th>機器名</th>
@@ -50,8 +50,8 @@
           <% @information.each do |info| %>
             <tr>
               <th><%= info.id %></th>
-              <td><%= info.group %></td>
               <td><%= info.service %></td>
+              <td><%= info.group %></td>
               <td><%= info.category %></td>
               <td><%= info.environment %></td>
               <td><%= info.name %></td>
