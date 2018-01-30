@@ -12,16 +12,16 @@
     </div>
   <% end %>
 
-  <%= f.label :name, "サービスID" %>
+  <%= f.label :name, "サービス" %>
   <%= f.text_field :service, class: 'form-control' %>
   <br>
-  <%= f.label :name, "グループID" %>
+  <%= f.label :name, "グループ" %>
   <%= f.text_field :group, class: 'form-control' %>
   <br>
-  <%= f.label :name, "機種別ID" %>
+  <%= f.label :name, "機種別" %>
   <%= f.text_field :category, class: 'form-control' %>
   <br>
-  <%= f.label :name, "環境ID" %>
+  <%= f.label :name, "環境" %>
   <%= f.text_field :environment, class: 'form-control' %>
   <br>
   <%= f.label :name, "機器名" %>
@@ -92,9 +92,6 @@
   <br>
   <%= f.label :name, "備考3" %>
   <%= f.text_field :remarks_3, class: 'form-control' %>
-  <br>
-  <%= f.label :name, "保守期限アラート無効" %>
-  <%= f.text_field :non_alert_flag, class: 'form-control' %>
   <br>
   <%= f.submit '追加', class: 'btn btn-primary btn-block' %>
   <% end %>

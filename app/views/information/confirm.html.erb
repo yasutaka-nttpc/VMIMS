@@ -31,12 +31,11 @@
       <%= f.hidden_field :remarks_1 %>
       <%= f.hidden_field :remarks_2 %>
       <%= f.hidden_field :remarks_3 %>
-      <%= f.hidden_field :non_alert_flag %>
 
-      <p>サービスID:<%= @information.service %></p>
-      <p>グループID:<%= @information.group %></p>
-      <p>機種別ID:<%= @information.category %></p>
-      <p>環境ID:<%= @information.environment %></p>
+      <p>サービス:<%= @information.service %></p>
+      <p>グループ:<%= @information.group %></p>
+      <p>機種別:<%= @information.category %></p>
+      <p>環境:<%= @information.environment %></p>
       <p>機器名:<%= @information.name %></p>
       <p>シリアルナンバー:<%= @information.serial %></p>
       <p>サーバー名:<%= @information.server_name %></p>
@@ -60,7 +59,6 @@
       <p>備考1:<%= @information.remarks_1 %></p>
       <p>備考2:<%= @information.remarks_2 %></p>
       <p>備考3:<%= @information.remarks_3 %></p>
-      <p>保守期限アラート無効:<%= @information.non_alert_flag %></p>
 
       <%= f.submit "登録する", class: 'btn btn-primary btn-block' %>
     <% end %>
@@ -93,7 +91,6 @@
       <%= f.hidden_field :remarks_1 %>
       <%= f.hidden_field :remarks_2 %>
       <%= f.hidden_field :remarks_3 %>
-      <%= f.hidden_field :non_alert_flag %>
       <%= f.submit "戻る", name: 'back', class: 'btn btn-default btn-block' %>
     <% end %>
 

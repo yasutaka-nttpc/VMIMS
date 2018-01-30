@@ -20,7 +20,7 @@ class CreateInformation < ActiveRecord::Migration[5.1]
       t.string :server_name, :limit => 255, :null => false, comment: 'サーバー名'
       t.string :support_contact, :limit => 255, comment: '保守ベンダー'
       t.date :support_contact_period, comment: '保守契約期間'
-      t.string :support_id, :limit => 255, default: :serial, comment: '保守番号'
+      t.string :support_id, :limit => 255, comment: '保守番号'
       t.string :hard_support_conditions, :limit => 255, comment: 'ハード保守条件'
       t.string :hard_contact_tel, :limit => 255, comment: 'ハード保守電話番号'
       t.string :hard_contact_mail, :limit => 255, comment: 'ハード保守メールアドレス'

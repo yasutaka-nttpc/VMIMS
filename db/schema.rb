@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20180130134352) do
     t.string "server_name", null: false, comment: "サーバー名"
     t.string "support_contact", comment: "保守ベンダー"
     t.date "support_contact_period", comment: "保守契約期間"
-    t.string "support_id", default: "serial", comment: "保守番号"
+    t.string "support_id", comment: "保守番号"
     t.string "hard_support_conditions", comment: "ハード保守条件"
     t.string "hard_contact_tel", comment: "ハード保守電話番号"
     t.string "hard_contact_mail", comment: "ハード保守メールアドレス"
