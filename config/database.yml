@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: VMIMS_production
-  username: VMIMS
-  password: <%= ENV['VMIMS_DATABASE_PASSWORD'] %>
+  # username: VMIMS
+  # password: <%= ENV['VMIMS_DATABASE_PASSWORD'] %>

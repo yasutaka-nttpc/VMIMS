@@ -28,7 +28,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -90,10 +90,11 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # action mailer setting
-  config.action_mailer.default_url_options = { host: '13.230.82.79' }
+  config.action_mailer.default_url_options = { host: '13.230.82.79', port: 3000 }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {
     address: 'localhost'
   }
 end
+
