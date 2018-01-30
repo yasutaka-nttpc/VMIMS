@@ -60,3 +60,4 @@ gem 'twitter-bootstrap-rails'
 # login
 gem 'devise'
 
+gem 'therubyracer'
