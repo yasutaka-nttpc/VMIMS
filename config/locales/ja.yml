@@ -43,6 +43,14 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+      service:
+        name: "サービス名"
+      group:
+        name: "グループ名"
+      category:
+        name: "カテゴリ名"
+      environment:
+        name: "環境名"
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
