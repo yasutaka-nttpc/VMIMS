@@ -26,7 +26,7 @@
               <td><%= group.name %></td>
               <td>
                 <%= link_to "編集", edit_group_path(group.id), class: 'btn btn-default btn-sm btn-success' %>
-                <%= link_to "削除", group_path(group.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+                <%= link_to "削除", group_path(group.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn-danger' %>
               </td>
             </tr>
           <% end %>

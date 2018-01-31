@@ -104,7 +104,7 @@
               <td><%= info.non_alert_flag %></td>
               <td>
                 <%= link_to "編集", edit_information_path(info.id), class: 'btn btn-default btn-sm btn-success' %>
-                <%= link_to "削除", information_path(info.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+                <%= link_to "削除", information_path(info.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn-danger' %>
               </td>
             </tr>
           <% end %>
