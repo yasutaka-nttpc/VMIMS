@@ -46,10 +46,11 @@
   <%= f.text_field :hard_support_conditions, class: 'form-control' %>
   <br>
   <%= f.label :name, "ハード保守電話番号" %>
-  <%= f.text_field :hard_contact_tel, class: 'form-control' %>
+    (半角数字 + 半角ハイフンでご入力ください)
+  <%= f.telephone_field :hard_contact_tel, class: 'form-control' %>
   <br>
   <%= f.label :name, "ハード保守メールアドレス" %>
-  <%= f.text_field :hard_contact_mail, class: 'form-control' %>
+  <%= f.email_field :hard_contact_mail, class: 'form-control' %>
   <br>
   <%= f.label :name, "ハード保守その他" %>
   <%= f.text_field :hard_contact_other, class: 'form-control' %>
@@ -58,10 +59,11 @@
   <%= f.text_field :soft_support_conditions, class: 'form-control' %>
   <br>
   <%= f.label :name, "ソフト保守電話番号" %>
-  <%= f.text_field :soft_contact_tel, class: 'form-control' %>
+    (半角数字 + 半角ハイフンでご入力ください)
+  <%= f.telephone_field :soft_contact_tel, class: 'form-control' %>
   <br>
   <%= f.label :name, "ソフト保守メールアドレス" %>
-  <%= f.text_field :soft_contact_mail, class: 'form-control' %>
+  <%= f.email_field :soft_contact_mail, class: 'form-control' %>
   <br>
   <%= f.label :name, "ソフト保守その他" %>
   <%= f.text_field :soft_contact_other, class: 'form-control' %>
@@ -70,19 +72,20 @@
   <%= f.text_field :os_version, class: 'form-control' %>
   <br>
   <%= f.label :name, "ハード保守期限" %>
-  <%= f.text_field :eos_hard, class: 'form-control' %>
+  <%= f.date_field :eos_hard, class: 'form-control' %>
   <br>
   <%= f.label :name, "ソフト保守期限" %>
-  <%= f.text_field :eos_soft, class: 'form-control' %>
+  <%= f.date_field :eos_soft, class: 'form-control' %>
   <br>
   <%= f.label :name, "営業担当者" %>
   <%= f.text_field :sales_contact, class: 'form-control' %>
   <br>
   <%= f.label :name, "営業電話番号" %>
-  <%= f.text_field :sales_contact_tel, class: 'form-control' %>
+    (半角数字 + 半角ハイフンでご入力ください)
+  <%= f.telephone_field :sales_contact_tel, class: 'form-control' %>
   <br>
   <%= f.label :name, "営業メールアドレス" %>
-  <%= f.text_field :sales_contact_mail, class: 'form-control' %>
+  <%= f.email_field :sales_contact_mail, class: 'form-control' %>
   <br>
   <%= f.label :name, "備考1" %>
   <%= f.text_field :remarks_1, class: 'form-control' %>
